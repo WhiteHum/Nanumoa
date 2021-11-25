@@ -1,22 +1,23 @@
 package com.example.nanumoa.controller;
 
-import com.example.nanumoa.entity.User;
+import com.example.nanumoa.entity.UserInfoDTO;
 import com.example.nanumoa.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@RequiredArgsConstructor
 @Controller
+
 public class UserController {
 
-    @Autowired
-    private UserService userService;
-
-    @GetMapping("/")
-    public String index(){
-        return "index";
-    }
+    private final UserService userService;
 
     @GetMapping("/login")
     public String login() {
@@ -24,16 +25,23 @@ public class UserController {
     }
 
 
-    @GetMapping("/join")
-    public String join() {
-        return "/join";
-    }
-    @PostMapping("/join")
-    public String join(User user){
-        userService.save(user);
-        return "login";
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
     }
 
+
+        @PostMapping("/user")
+        public String signup(UserInfoDTO infoDto) { // 회원 추가
+            userService.save(infoDto);
+            return "redirect:/login";
+        }
+
+    @GetMapping(value = "/logout")
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
+        new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
+        return "redirect:/login";
+    }
 
     @GetMapping("/farmer1")
     public String farmer1() {
