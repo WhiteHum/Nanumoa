@@ -1,9 +1,11 @@
 package com.example.nanumoa.controller;
 
+import com.example.nanumoa.entity.User;
 import com.example.nanumoa.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -21,10 +23,18 @@ public class UserController {
         return "/login";
     }
 
+
     @GetMapping("/join")
     public String join() {
         return "/join";
     }
+    @PostMapping("/join")
+    public String join(User user){
+        userService.save(user);
+        return "login";
+    }
+
+
     @GetMapping("/farmer1")
     public String farmer1() {
         return "/farmer1";

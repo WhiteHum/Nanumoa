@@ -36,7 +36,7 @@
 <div class="row">
     <div class="headerlogo four columns">
         <div class="logo">
-            <a th:href="@{index.html}">
+            <a th:href="@{/}">
                 <img th:src="@{/i/nanumoa.png}" style="width:365px; height:75px;  margin: -30px 0 -30px -20px;">
             </a>
         </div>
@@ -45,7 +45,7 @@
         <nav id="nav-wrap">
             <ul id="main-menu" class="nav-bar sf-menu" style="font-weight: bolder;">
                 <li class="current">
-                    <a th:href="@{index.html}">Home</a>
+                    <a th:href="@{/}">Home</a>
                 </li>
                 <li class="current">
                     <a href="#">기업소개</a>
@@ -116,7 +116,6 @@
 
     <form th:action="@{/join}" method="post" class="migrantInsertForm">
         <h2 style="margin: 30px;">회원가입</h2>
-
         <div class="idForm">
             <input type="text" name="userid" class="id" placeholder="아이디">
         </div>
@@ -136,12 +135,11 @@
             <input type="text" name="role" class="role" placeholder="대상">
         </div>
         <br>
-        <div class="bottomText">
-            <button type="submit" class="btn lnsert1">회원가입</button>
-            </a>
-            <a th:href="@{/login}"><button class="btn lnsert2">돌아가기</button></a>
-        </div>
+        <button type="submit" class="btn lnsert1">회원가입</button>
     </form>
+</div>
+<div class="bottomText">
+    <a th:href="@{/login}"><button class="btn lnsert2">돌아가기</button></a>
 </div>
 
 <!-- FOOOTER ================================================== -->

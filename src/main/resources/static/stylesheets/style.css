@@ -91,7 +91,7 @@
         left: 40%;
         transform: translateX(-50%);
         margin-bottom: 40px;
-        width: 80%;
+        width: 50%;
         height: 40px;
         background: linear-gradient(125deg, #1e9b9b, #1e9b9b, #006666);
         background-position: left;
@@ -111,7 +111,7 @@
         /* left: 40%; */
         /* transform: translateX(-50%); */
         margin-bottom: 40px;
-        width: 40%;
+        width: 20%;
         height: 40px;
         background: linear-gradient(125deg, #ff9100, #ff9100, #81ecec);
         background-position: left;
@@ -131,7 +131,7 @@
         /* left: 40%;
         transform: translateX(-50%); */
         margin-bottom: 40px;
-        width: 40%;
+        width: 20%;
         height: 40px;
         background: linear-gradient(125deg, #ff6a8f, #ff6a8f, #81ecec);
         background-position: left;
