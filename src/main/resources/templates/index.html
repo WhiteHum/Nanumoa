@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Nanumoa</title>
+
+    <link rel="stylesheet" th:href="@{/stylesheets/style.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/skins/blue.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/responsive.css}">
+
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<body>
+    <!-- HIDDEN PANEL 
+================================================== -->
+    <div id="panel">
+        <div class="row">
+            <div class="twelve columns">
+                <img src="http://www.wowthemes.net/demo/studiofrancesca/images/info.png" class="pics" alt="info">
+                <div class="infotext">
+                    Thank you for visiting my theme! Replace this with your message to visitors.
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="slide">
+        <a href="#" class="btn-slide"></a>
+    </p>
+    <!-- HEADER
+================================================== -->
+    <div class="row">
+        <div class="headerlogo four columns">
+            <div class="logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/i/nanumoa.png}" style="width:365px; height:75px;  margin: -30px 0 -30px -20px;">
+                </a>
+            </div>
+        </div>
+        <div class="headermenu eight columns noleftmarg">
+            <nav id="nav-wrap">
+                <ul id="main-menu" class="nav-bar sf-menu" style="font-weight: bolder;">
+                    <li class="current">
+                        <a th:href="@{/}">Home</a>
+                    </li>
+                    <li class="current">
+                        <a href="#">기업소개</a>
+                        <ul>
+                            <li><a th:href="@{/about}">소개 및 인사말</a></li>
+                            <li><a th:href="@{/services}">주요 뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">농장주</a>
+                        <ul>
+                            <li><a th:href="@{/farmer1}">사람 구하기</a></li>
+                            <li><a th:href="@{/farmer2}">농장주 지원</a></li>
+                            <li><a th:href="@{/farmer3}">온라인 농업 기초 교육</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">이주노동자</a>
+                        <ul>
+                            <li><a th:href="@{/migrant1}">일하기</a></li>
+                            <li><a th:href="@{/migrant2}">이주 여성 지원</a></li>
+                            <li><a th:href="@{/migrant3}">이주민 농업 기초 교육</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">모드니로</a>
+                        <ul>
+                            <li><a th:href="@{/many_find}">자주 찾는 일의 종류</a></li>
+                            <li><a th:href="@{/elements}">투자자 문의</a></li>
+                            <li><a th:href="@{/typography}">사업자 문의</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a th:href="@{/help}">고객문의</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/login}">
+                            <button class="login button">로그인</button>
+                        </a>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="clear">
+    </div>
+    <!-- SLIDER 
+================================================== -->
+    <div id="ei-slider" class="ei-slider">
+        <ul class="ei-slider-large">
+            <li>
+                <img th:src="@{/images/women.jpg}" alt="image01" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Smile</h3>
+                </div>
+            </li>
+            <li>
+                <img th:src="@{/images/Rural_education.jpg}" alt="image02" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Hope</h3>
+                </div>
+            </li>
+            <li>
+                <img th:src="@{/images/family1.jpg}" alt="image09" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Love</h3>
+                </div>
+            </li>
+            <li>
+                <img th:src="@{/images/houseworker.jpg}" alt="image03" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Dream</h3>
+                </div>
+            </li>
+            <li>
+                <img th:src="@{/images/Planting_seedlings.jpg}" alt="image04" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>care</h3>
+                </div>
+            </li>
+
+            <li>
+                <img th:src="@{/images/Screening_Operations.jpg}" alt="image05" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>active</h3>
+                </div>
+            </li>
+            <li>
+                <img th:src="@{/images/farmworker.jpg}" alt="image06" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Learn</h3>
+                </div>
+            </li>
+
+            <li>
+                <img th:src="@{/images/trackter.jpg}" alt="image08" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>For</h2>
+                    <h3>Better</h3>
+                </div>
+            </li>
+
+            <li>
+                <img th:src="@{/images/female_education3.jpg}" alt="image10" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Stand up & </h2>
+                    <h3>Live</h3>
+                </div>
+            </li>
+        </ul>
+        <!-- slider-thumbs -->
+        <ul class="ei-slider-thumbs">
+            <li class="ei-slider-element">Current</li>
+            <li><a href="#">Slide 1</a><img src="https://via.placeholder.com/150x59/000000/?text=For Smile" class="slideshowthumb" alt="thumb01" /></li>
+            <li><a href="#">Slide 2</a><img src="https://via.placeholder.com/150x59/000000/?text=For Hope" class="slideshowthumb" alt="thumb02" /></li>
+            <li><a href="#">Slide 3</a><img src="https://via.placeholder.com/150x59/000000/?text=For Love" class="slideshowthumb" alt="thumb08" /></li>
+            <li><a href="#">Slide 4</a><img src="https://via.placeholder.com/150x59/000000/?text=For Dream" class="slideshowthumb" alt="thumb03" /></li>
+            <li><a href="#">Slide 5</a><img src="https://via.placeholder.com/150x59/000000/?text=For Care" class="slideshowthumb" alt="thumb04" /></li>
+            <li><a href="#">Slide 6</a><img src="https://via.placeholder.com/150x59/000000/?text=For Active" class="slideshowthumb" alt="thumb05" /></li>
+            <li><a href="#">Slide 7</a><img src="https://via.placeholder.com/150x59/000000/?text=For Learn" class="slideshowthumb" alt="thumb06" /></li>
+            <li><a href="#">Slide 8</a><img src="https://via.placeholder.com/150x59/000000/?text=For Better" class="slideshowthumb" alt="thumb07" /></li>
+            <li><a href="#">Slide 9</a><img src="https://via.placeholder.com/150x59/000000/?text=Stand up&Live" class="slideshowthumb" alt="thumb09" /></li>
+        </ul>
+    </div>
+    <div class="minipause">
+    </div>
+    <!-- SUBHEADER
+================================================== -->
+    <div id="subheader">
+        <div class="row">
+            <div class="twelve columns">
+                <p class="text-center">
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ANIMATED COLUMNS 
+================================================== -->
+    <div class="row">
+        <div class="twelve columns">
+            <ul class="ca-menu">
+                <li>
+                    <a th:href="@{farmer1.html}">
+                        <span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">내 농장<br/>사람 구하기</h2>
+                            <h3 class="ca-sub">합리적인 금액으로 <br/>일할 사람 구하기</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{migrant1.html}">
+                        <span class="ca-icon"><i class="fa fa-krw"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">이주민<br/>일 구하기</h2>
+                            <h3 class="ca-sub">안전하게 일도 하고<br/>안전하게 돈도 벌기</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{many_find.html}">
+                        <span class="ca-icon"><i class="fa fa-users"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">자주 찾는<br/>일의 종류</h2>
+                            <h3 class="ca-sub">일을 처음 구합니다! <br/>어떤 일들을 할 수 있을까요?</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{select_education.html}">
+                        <span class="ca-icon"><i class="fa fa-headphones"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">온라인<br/>농촌 기초 교육</h2>
+                            <h3 class="ca-sub">처음 계약하시는 분 <br/>처음 도전해 보시는 분 주목!</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- CONTENT 
+================================================== -->
+    <div class="row">
+        <div class="twelve columns">
+            <div class="centersectiontitle">
+                <h4>What we do</h4>
+            </div>
+        </div>
+        <div class="four columns">
+            <h5>함께하는 나누모아</h5>
+            <p>
+                공급자와 수요자 사이의 투명한 정보 공유와 신뢰도 향상을 위한 온라인 정보제공 플랫폼입니다.<br/><br/> 양질의 일자리 창출을 위한 지속가능한 상생을 추구하고 외국인 근로자의 불안정한 비자와 취업 문제를 해결하기 위해 노력하고 있습니다.
+            </p>
+            <p>
+                <a th:href="@{about.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+
+            </p>
+        </div>
+        <div class="four columns">
+            <h5>이주민 번역 지원</h5>
+            <p>
+                모드니는 이주민과 이주 여성들이 읽기 쉬운 언어로 번역 지원을 하고 있습니다.<br/><br/>이주민과 이주 여성들의 외국인 근로자의 인력 정보등록을 장려하고 결혼이민 비자를 받아 한국에 체류하고 있는 이주여성의 경제적 자립을 지원합니다.
+            </p>
+            <p>
+                <a th:href="@{migrant2.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+            </p>
+        </div>
+        <div class="four columns">
+            <h5>주요 뉴스</h5>
+            <p>
+                정부와 고용노동부가 협력하는 일자리 지원 사업의 주요 뉴스를 제공합니다.<br/><br/> 지역 기관에서 지속적으로 하고 있는 홍보와 이주민 여러분들과 소통하는 참여 정보를 가장 최신으로 볼 수 있습니다.
+            </p>
+            <p>
+                <a th:href="@{services.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+            </p>
+        </div>
+    </div>
+    <div class="hr">
+    </div>
+    <!-- FOOOTER 
+================================================== -->
+    <div id="footer">
+        <footer class="row">
+            <p class="back-top floatright">
+                <a href="#top"><span></span></a>
+            </p>
+            <div class="four columns">
+                <h1>ABOUT US</h1>
+                Our goal is to keep clients satisfied!
+            </div>
+            <div class="four columns">
+                <h1>GET SOCIAL</h1>
+                <a class="social facebook" href="#"></a>
+                <a class="social twitter" href="#"></a>
+                <a class="social deviantart" href="#"></a>
+                <a class="social flickr" href="#"></a>
+                <a class="social dribbble" href="#"></a>
+            </div>
+            <div class="four columns">
+                <h1 class="newsmargin">NEWSLETTER</h1>
+                <div class="row collapse newsletter floatright">
+                    <div class="ten mobile-three columns">
+                        <input type="text" class="nomargin" placeholder="Enter your e-mail address...">
+                    </div>
+                    <div class="two mobile-one columns">
+                        <a href="#" class="postfix button expand">GO</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="copyright">
+        <div class="row">
+            <div class="six columns">
+                &copy;<span class="small"> Copyright Your Agency Name</span>
+            </div>
+            <div class="six columns">
+                <span class="small floatright">Design by <a target="_blank" href="http://www.wowthemes.net/premium-themes-templates/">WowThemesNet</a> </span>
+            </div>
+        </div>
+    </div>
+    <!-- JAVASCRIPTS 
+================================================== -->
+    <!-- Javascript files placed here for faster loading -->
+    <script th:src="@{/javascripts/foundation.min.js}"></script>
+    <script th:src="@{/javascripts/jquery.easing.1.3.js}"></script>
+    <script th:src="@{/javascripts/elasticslideshow.js}"></script>
+    <script th:src="@{/javascripts/jquery.carouFredSel-6.0.5-packed.js}"></script>
+    <script th:src="@{/javascripts/jquery.cycle.js}"></script>
+    <script th:src="@{/javascripts/app.js}"></script>
+    <script th:src="@{/javascripts/modernizr.foundation.js}"></script>
+    <script th:src="@{/javascripts/slidepanel.js}"></script>
+    <script th:src="@{/javascripts/scrolltotop.js}"></script>
+    <script th:src="@{/javascripts/hoverIntent.js}"></script>
+    <script th:src="@{/javascripts/superfish.js}"></script>
+    <script th:src="@{/javascripts/responsivemenu.js}"></script>
+</body>
+
+</html>
