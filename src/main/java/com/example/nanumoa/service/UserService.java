@@ -45,5 +45,4 @@ public class UserService implements UserDetailsService {
                 .auth(infoDto.getAuth())
                 .password(infoDto.getPassword()).build()).getCode();
     }
-
 }
