@@ -4,7 +4,7 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -13,12 +13,12 @@
     <link rel="stylesheet" th:href="@{/stylesheets/style.css}">
     <link rel="stylesheet" th:href="@{/stylesheets/skins/blue.css}">
     <link rel="stylesheet" th:href="@{/stylesheets/responsive.css}">
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
 
-<body style="border: 5px;">
-<!-- HIDDEN PANEL ================================================== -->
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<body>
+<!-- HIDDEN PANEL
+================================================== -->
 <div id="panel">
     <div class="row">
         <div class="twelve columns">
@@ -32,7 +32,8 @@
 <p class="slide">
     <a href="#" class="btn-slide"></a>
 </p>
-<!-- HEADER ================================================== -->
+<!-- HEADER
+================================================== -->
 <div class="row">
     <div class="headerlogo four columns">
         <div class="logo">
@@ -50,45 +51,54 @@
                 <li class="current">
                     <a href="#">기업소개</a>
                     <ul>
-                        <li><a th:href="@{about.html}">소개 및 인사말</a></li>
-                        <li><a th:href="@{services.html}">주요 뉴스</a></li>
+                        <li><a th:href="@{/about}">소개 및 인사말</a></li>
+                        <li><a th:href="@{/services}">주요 뉴스</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">농장주</a>
                     <ul>
-                        <li><a th:href="@{farmer1.html}">사람 구하기</a></li>
-                        <li><a th:href="@{farmer2.html}">농장주 지원</a></li>
-                        <li><a th:href="@{farmer3.html}">온라인 농업 기초 교육</a></li>
+                        <li><a th:href="@{/farmer1}">사람 구하기</a></li>
+                        <li><a th:href="@{/farmer2}">농장주 지원</a></li>
+                        <li><a th:href="@{/farmer3}">온라인 농업 기초 교육</a></li>
 
                     </ul>
                 </li>
                 <li>
                     <a href="#">이주노동자</a>
                     <ul>
-                        <li><a th:href="@{migrant1.html}">일하기</a></li>
-                        <li><a th:href="@{migrant2.html}">이주 여성 지원</a></li>
-                        <li><a th:href="@{migrant3.html}">이주민 농업 기초 교육</a></li>
+                        <li><a th:href="@{/migrant1}">일하기</a></li>
+                        <li><a th:href="@{/migrant2}">이주 여성 지원</a></li>
+                        <li><a th:href="@{/migrant3}">이주민 농업 기초 교육</a></li>
 
                     </ul>
                 </li>
                 <li>
                     <a href="#">모드니로</a>
                     <ul>
-                        <li><a th:href="@{many_find.html}">자주 찾는 일의 종류</a></li>
-                        <li><a th:href="@{elements.html}">투자자 문의</a></li>
-                        <li><a th:href="@{typography.html}">사업자 문의</a></li>
+                        <li><a th:href="@{/many/find}">자주 찾는 일의 종류</a></li>
+                        <li><a th:href="@{/elements}">투자자 문의</a></li>
+                        <li><a th:href="@{/typography}">사업자 문의</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a th:href="@{contact.html}">고객문의</a>
+                    <a th:href="@{/help}">고객문의</a>
                 </li>
-                <li>
-                    <a th:href="@{login.html}">
+                <!--                    <li>-->
+                <!--                        <span sec:authentication="name"></span>님 환영합니다.-->
+                <!--                    </li>-->
+                <li sec:authorize="isAnonymous()">
+                    <a th:href="@{/login}">
                         <button class="login button">로그인</button>
                     </a>
-
                 </li>
+                <li sec:authorize="isAuthenticated()">
+                    <form id="logout" action="/logout" method="POST">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                        <input type="submit" class="login button" value="로그아웃"/>
+                    </form>
+                </li>
+
             </ul>
         </nav>
     </div>

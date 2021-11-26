@@ -40,25 +40,29 @@ public class UserController {
     @GetMapping(value = "/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
-        return "redirect:/login";
+        return "redirect:/";
     }
 
     @GetMapping("/farmer1")
     public String farmer1() {
         return "/farmer1";
     }
+
     @GetMapping("/farmer2")
     public String farmer2() {
         return "/farmer2";
     }
+
     @GetMapping("/farmer3")
     public String farmer3() {
         return "/farmer3";
     }
+
     @GetMapping("/farmer/detail")
     public String farmerDetail() {
         return "/farmer_detail";
     }
+
     @GetMapping("/farmer/education")
     public String farmerEducation() {
         return "/farmer_education";
@@ -76,6 +80,7 @@ public class UserController {
     public String migrant3() {
         return "/migrant3";
     }
+
     @GetMapping("/migrant/education")
     public String migrantEducation() {
         return "/migrant_education";
@@ -97,9 +102,9 @@ public class UserController {
     public String help() {
         return "/help";
     }
-    @GetMapping("/service")
-    public String service() {
-        return "/service";
+    @GetMapping("/services")
+    public String services() {
+        return "/services";
     }
     @GetMapping("/many/find")
     public String manyFind() {

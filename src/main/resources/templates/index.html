@@ -17,16 +17,7 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 
 <body>
-
-<h2>회원 전용 페이지</h2>
-ID : <span sec:authentication="name"></span> <br>
-소유 권한 : <span sec:authentication="authorities"></span> <br>
-
-<form id="logout" action="/logout" method="POST">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-    <input type="submit" value="로그아웃"/>
-</form>
-    <!-- HIDDEN PANEL 
+    <!-- HIDDEN PANEL
 ================================================== -->
     <div id="panel">
         <div class="row">
@@ -85,7 +76,7 @@ ID : <span sec:authentication="name"></span> <br>
                     <li>
                         <a href="#">모드니로</a>
                         <ul>
-                            <li><a th:href="@{/many_find}">자주 찾는 일의 종류</a></li>
+                            <li><a th:href="@{/many/find}">자주 찾는 일의 종류</a></li>
                             <li><a th:href="@{/elements}">투자자 문의</a></li>
                             <li><a th:href="@{/typography}">사업자 문의</a></li>
                         </ul>
@@ -93,10 +84,19 @@ ID : <span sec:authentication="name"></span> <br>
                     <li>
                         <a th:href="@{/help}">고객문의</a>
                     </li>
-                    <li>
+<!--                    <li>-->
+<!--                        <span sec:authentication="name"></span>님 환영합니다.-->
+<!--                    </li>-->
+                    <li sec:authorize="isAnonymous()">
                         <a th:href="@{/login}">
                             <button class="login button">로그인</button>
                         </a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <form id="logout" action="/logout" method="POST">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <input type="submit" class="login button" value="로그아웃"/>
+                        </form>
                     </li>
 
                 </ul>
@@ -106,7 +106,7 @@ ID : <span sec:authentication="name"></span> <br>
 
     <div class="clear">
     </div>
-    <!-- SLIDER 
+    <!-- SLIDER
 ================================================== -->
     <div id="ei-slider" class="ei-slider">
         <ul class="ei-slider-large">
@@ -204,13 +204,13 @@ ID : <span sec:authentication="name"></span> <br>
             </div>
         </div>
     </div>
-    <!-- ANIMATED COLUMNS 
+    <!-- ANIMATED COLUMNS
 ================================================== -->
     <div class="row">
         <div class="twelve columns">
             <ul class="ca-menu">
                 <li>
-                    <a th:href="@{farmer1.html}">
+                    <a th:href="@{/farmer1}">
                         <span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
                         <div class="ca-content">
                             <h2 class="ca-main">내 농장<br/>사람 구하기</h2>
@@ -219,7 +219,7 @@ ID : <span sec:authentication="name"></span> <br>
                     </a>
                 </li>
                 <li>
-                    <a th:href="@{migrant1.html}">
+                    <a th:href="@{/migrant1}">
                         <span class="ca-icon"><i class="fa fa-krw"></i></span>
                         <div class="ca-content">
                             <h2 class="ca-main">이주민<br/>일 구하기</h2>
@@ -228,7 +228,7 @@ ID : <span sec:authentication="name"></span> <br>
                     </a>
                 </li>
                 <li>
-                    <a th:href="@{many_find.html}">
+                    <a th:href="@{/many/find}">
                         <span class="ca-icon"><i class="fa fa-users"></i></span>
                         <div class="ca-content">
                             <h2 class="ca-main">자주 찾는<br/>일의 종류</h2>
@@ -237,7 +237,7 @@ ID : <span sec:authentication="name"></span> <br>
                     </a>
                 </li>
                 <li>
-                    <a th:href="@{select_education.html}">
+                    <a th:href="@{/select/education}">
                         <span class="ca-icon"><i class="fa fa-headphones"></i></span>
                         <div class="ca-content">
                             <h2 class="ca-main">온라인<br/>농촌 기초 교육</h2>
@@ -248,7 +248,7 @@ ID : <span sec:authentication="name"></span> <br>
             </ul>
         </div>
     </div>
-    <!-- CONTENT 
+    <!-- CONTENT
 ================================================== -->
     <div class="row">
         <div class="twelve columns">
@@ -262,7 +262,7 @@ ID : <span sec:authentication="name"></span> <br>
                 공급자와 수요자 사이의 투명한 정보 공유와 신뢰도 향상을 위한 온라인 정보제공 플랫폼입니다.<br/><br/> 양질의 일자리 창출을 위한 지속가능한 상생을 추구하고 외국인 근로자의 불안정한 비자와 취업 문제를 해결하기 위해 노력하고 있습니다.
             </p>
             <p>
-                <a th:href="@{about.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+                <a th:href="@{/about}" class="readmore" style="margin-left: 100px;">더보기</a>
 
             </p>
         </div>
@@ -272,7 +272,7 @@ ID : <span sec:authentication="name"></span> <br>
                 모드니는 이주민과 이주 여성들이 읽기 쉬운 언어로 번역 지원을 하고 있습니다.<br/><br/>이주민과 이주 여성들의 외국인 근로자의 인력 정보등록을 장려하고 결혼이민 비자를 받아 한국에 체류하고 있는 이주여성의 경제적 자립을 지원합니다.
             </p>
             <p>
-                <a th:href="@{migrant2.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+                <a th:href="@{/migrant2}" class="readmore" style="margin-left: 100px;">더보기</a>
             </p>
         </div>
         <div class="four columns">
@@ -281,13 +281,13 @@ ID : <span sec:authentication="name"></span> <br>
                 정부와 고용노동부가 협력하는 일자리 지원 사업의 주요 뉴스를 제공합니다.<br/><br/> 지역 기관에서 지속적으로 하고 있는 홍보와 이주민 여러분들과 소통하는 참여 정보를 가장 최신으로 볼 수 있습니다.
             </p>
             <p>
-                <a th:href="@{services.html}" class="readmore" style="margin-left: 100px;">더보기</a>
+                <a th:href="@{/services}" class="readmore" style="margin-left: 100px;">더보기</a>
             </p>
         </div>
     </div>
     <div class="hr">
     </div>
-    <!-- FOOOTER 
+    <!-- FOOOTER
 ================================================== -->
     <div id="footer">
         <footer class="row">
@@ -329,7 +329,7 @@ ID : <span sec:authentication="name"></span> <br>
             </div>
         </div>
     </div>
-    <!-- JAVASCRIPTS 
+    <!-- JAVASCRIPTS
 ================================================== -->
     <!-- Javascript files placed here for faster loading -->
     <script th:src="@{/javascripts/foundation.min.js}"></script>

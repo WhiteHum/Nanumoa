@@ -4,111 +4,108 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="utf-8" />
-    <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-    <title>Modney Modney</title>
-    <!-- CSS Files-->
-    <link rel="stylesheet" href="../static/stylesheets/style.css">
+    <title>Nanumoa</title>
 
-    <link rel="stylesheet" href="../static/stylesheets/skins/blue.css">
-    <!-- skin color -->
-    <link rel="stylesheet" href="../static/stylesheets/responsive.css">
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
+    <link rel="stylesheet" th:href="@{/stylesheets/style.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/skins/blue.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/responsive.css}">
+
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
 
 <body>
-    <!-- HIDDEN PANEL 
+<!-- HIDDEN PANEL
 ================================================== -->
-    <div id="panel">
-        <div class="row">
-            <div class="twelve columns">
-                <img src="http://www.wowthemes.net/demo/studiofrancesca/images/info.png" class="pics" alt="info">
-                <div class="infotext">
-                    Thank you for visiting my theme! Replace this with your message to visitors.
-                </div>
-            </div>
-        </div>
-    </div>
-    <p class="slide">
-        <a href="#" class="btn-slide"></a>
-    </p>
-    <!-- HEADER
-================================================== -->
+<div id="panel">
     <div class="row">
-        <div class="headerlogo four columns">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="../static/i/nanumoa.png" style="width:365px; height:75px;  margin: -30px 0 -30px -20px;">
-                    <!--<h4>모드니로</h4>-->
-                </a>
+        <div class="twelve columns">
+            <img src="http://www.wowthemes.net/demo/studiofrancesca/images/info.png" class="pics" alt="info">
+            <div class="infotext">
+                Thank you for visiting my theme! Replace this with your message to visitors.
             </div>
         </div>
-        <div class="headermenu eight columns noleftmarg">
-            <nav id="nav-wrap">
-                <ul id="main-menu" class="nav-bar sf-menu" style="font-weight: bolder;">
-                    <li class="current">
-                        <a href="index.html">Home</a>
-                        <ul>
-                            <li><a href="Notice.html">공지사항</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">기업소개</a>
-                        <ul>
-                            <li><a href="about.html">소개 및 인사말</a></li>
-                            <li><a href="services.html">주요 뉴스</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">농장주</a>
-                        <ul>
-                            <li><a href="farmer1.html">사람 구하기</a></li>
-                            <li><a href="farmer2.html">농장주 지원</a></li>
-                            <li><a href="farmer3.html">온라인 농업 기초 교육</a></li>
-                            <li><a href="farmer_talk.html">농장주 모드니 톡톡</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">이주노동자</a>
-                        <ul>
-                            <li><a href="migrant1.html">일하기</a></li>
-                            <li><a href="migrant2.html">이주 여성 지원</a></li>
-                            <li><a href="migrant3.html">이주민 농업 기초 교육</a></li>
-                            <li><a href="migrant_talk.html">이주 모드니 톡톡</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">모드니로</a>
-                        <ul>
-                            <li><a href="many_find.html">자주 찾는 일의 종류</a></li>
-                            <li><a href="elements.html">투자자 문의</a></li>
-                            <li><a href="typography.html">사업자 문의</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">고객문의</a>
-                    </li>
-                    <li>
-                        <a href="login.html">
-                            <button class="login button">로그인</button>
-                        </a>
-
-                    </li>
-                </ul>
-            </nav>
+    </div>
+</div>
+<p class="slide">
+    <a href="#" class="btn-slide"></a>
+</p>
+<!-- HEADER
+================================================== -->
+<div class="row">
+    <div class="headerlogo four columns">
+        <div class="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/i/nanumoa.png}" style="width:365px; height:75px;  margin: -30px 0 -30px -20px;">
+            </a>
         </div>
     </div>
+    <div class="headermenu eight columns noleftmarg">
+        <nav id="nav-wrap">
+            <ul id="main-menu" class="nav-bar sf-menu" style="font-weight: bolder;">
+                <li class="current">
+                    <a th:href="@{/}">Home</a>
+                </li>
+                <li class="current">
+                    <a href="#">기업소개</a>
+                    <ul>
+                        <li><a th:href="@{/about}">소개 및 인사말</a></li>
+                        <li><a th:href="@{/services}">주요 뉴스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">농장주</a>
+                    <ul>
+                        <li><a th:href="@{/farmer1}">사람 구하기</a></li>
+                        <li><a th:href="@{/farmer2}">농장주 지원</a></li>
+                        <li><a th:href="@{/farmer3}">온라인 농업 기초 교육</a></li>
 
-    <div class="clear">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">이주노동자</a>
+                    <ul>
+                        <li><a th:href="@{/migrant1}">일하기</a></li>
+                        <li><a th:href="@{/migrant2}">이주 여성 지원</a></li>
+                        <li><a th:href="@{/migrant3}">이주민 농업 기초 교육</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">모드니로</a>
+                    <ul>
+                        <li><a th:href="@{/many/find}">자주 찾는 일의 종류</a></li>
+                        <li><a th:href="@{/elements}">투자자 문의</a></li>
+                        <li><a th:href="@{/typography}">사업자 문의</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a th:href="@{/help}">고객문의</a>
+                </li>
+                <!--                    <li>-->
+                <!--                        <span sec:authentication="name"></span>님 환영합니다.-->
+                <!--                    </li>-->
+                <li sec:authorize="isAnonymous()">
+                    <a th:href="@{/login}">
+                        <button class="login button">로그인</button>
+                    </a>
+                </li>
+                <li sec:authorize="isAuthenticated()">
+                    <form id="logout" action="/logout" method="POST">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                        <input type="submit" class="login button" value="로그아웃"/>
+                    </form>
+                </li>
+
+            </ul>
+        </nav>
     </div>
+</div>
+
+<div class="clear">
+</div>
     <!-- SUBHEADER
 ================================================== -->
     <div id="subheader">
@@ -123,7 +120,7 @@
     </div>
     <div class="hr">
     </div>
-    <!-- CONTENT 
+    <!-- CONTENT
 ================================================== -->
     <div class="row">
         <!-- MAIN CONTENT-->
@@ -225,63 +222,67 @@
     <div class="hr">
     </div>
 
-    <!-- FOOOTER 
-================================================== -->
-    <div id="footer">
-        <footer class="row">
-            <p class="back-top floatright">
-                <a href="#top"><span></span></a>
-            </p>
-            <div class="four columns">
-                <h1>ABOUT US</h1>
-                Our goal is to keep clients satisfied!
-            </div>
-            <div class="four columns">
-                <h1>GET SOCIAL</h1>
-                <a class="social facebook" href="#"></a>
-                <a class="social twitter" href="#"></a>
-                <a class="social deviantart" href="#"></a>
-                <a class="social flickr" href="#"></a>
-                <a class="social dribbble" href="#"></a>
-            </div>
-            <div class="four columns">
-                <h1 class="newsmargin">NEWSLETTER</h1>
-                <div class="row collapse newsletter floatright">
-                    <div class="ten mobile-three columns">
-                        <input type="text" class="nomargin" placeholder="Enter your e-mail address...">
-                    </div>
-                    <div class="two mobile-one columns">
-                        <a href="#" class="postfix button expand">GO</a>
-                    </div>
+<!-- FOOOTER ================================================== -->
+<div class="clear">
+</div>
+
+<div id="footer">
+    <footer class="row">
+        <p class="back-top floatright">
+            <a href="#top"><span></span></a>
+        </p>
+        <div class="four columns">
+            <h1>ABOUT US</h1>
+            Our goal is to keep clients satisfied!
+        </div>
+        <div class="four columns">
+            <h1>GET SOCIAL</h1>
+            <a class="social facebook" href="#"></a>
+            <a class="social twitter" href="#"></a>
+            <a class="social deviantart" href="#"></a>
+            <a class="social flickr" href="#"></a>
+            <a class="social dribbble" href="#"></a>
+        </div>
+        <div class="four columns">
+            <h1 class="newsmargin">NEWSLETTER</h1>
+            <div class="row collapse newsletter floatright">
+                <div class="ten mobile-three columns">
+                    <input type="text" class="nomargin" placeholder="Enter your e-mail address...">
+                </div>
+                <div class="two mobile-one columns">
+                    <a href="#" class="postfix button expand">GO</a>
                 </div>
             </div>
-        </footer>
-    </div>
-    <div class="copyright">
-        <div class="row">
-            <div class="six columns">
-                &copy;<span class="small"> Copyright 2015 Your Agency Name</span>
-            </div>
-            <div class="six columns">
-                <span class="small floatright"> Template by <a href="www.wowthemes.net">WowThemes.net</a></span>
-            </div>
+        </div>
+    </footer>
+</div>
+<div class="copyright">
+    <div class="row">
+        <div class="six columns">
+            &copy;<span class="small"> Copyright Your Agency Name</span>
+        </div>
+        <div class="six columns">
+            <span class="small floatright">Design by <a target="_blank" href="http://www.wowthemes.net/premium-themes-templates/">WowThemesNet</a> </span>
         </div>
     </div>
-    <!-- JAVASCRIPTS 
+</div>
+<!-- JAVASCRIPTS
 ================================================== -->
-    <!-- Javascript files placed here for faster loading -->
-    <script src="../static/javascripts/foundation.min.js"></script>
-    <script src="../static/javascripts/jquery.easing.1.3.js"></script>
-    <script src="../static/javascripts/elasticslideshow.js"></script>
-    <script src="../static/javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
-    <script src="../static/javascripts/jquery.cycle.js"></script>
-    <script src="../static/javascripts/app.js"></script>
-    <script src="../static/javascripts/modernizr.foundation.js"></script>
-    <script src="../static/javascripts/slidepanel.js"></script>
-    <script src="../static/javascripts/scrolltotop.js"></script>
-    <script src="../static/javascripts/hoverIntent.js"></script>
-    <script src="../static/javascripts/superfish.js"></script>
-    <script src="../static/javascripts/responsivemenu.js"></script>
+<!-- Javascript files placed here for faster loading -->
+<script th:src="@{/javascripts/foundation.min.js}"></script>
+<script th:src="@{/javascripts/jquery.easing.1.3.js}"></script>
+<script th:src="@{/javascripts/elasticslideshow.js}"></script>
+<script th:src="@{/javascripts/jquery.carouFredSel-6.0.5-packed.js}"></script>
+<script th:src="@{/javascripts/jquery.cycle.js}"></script>
+<script th:src="@{/javascripts/app.js}"></script>
+<script th:src="@{/javascripts/modernizr.foundation.js}"></script>
+<script th:src="@{/javascripts/slidepanel.js}"></script>
+<script th:src="@{/javascripts/scrolltotop.js}"></script>
+<script th:src="@{/javascripts/hoverIntent.js}"></script>
+<script th:src="@{/javascripts/superfish.js}"></script>
+<script th:src="@{/javascripts/responsivemenu.js}"></script>
 </body>
+
+</html>
 
 </html>
