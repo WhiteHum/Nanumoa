@@ -1,11 +1,10 @@
 package com.example.nanumoa.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
+import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -13,13 +12,21 @@ public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
+    @NotNull
     private String title;
 
     private String content;
 
-    private String filename;
+    @ManyToOne
+    @JoinColumn( name = "user_info_id", referencedColumnName = "id")
+    private UserInfo userInfo;
 
-    private String filepath;
+
+//
+//    private String filename;
+//
+//    private String filepath;
+
 }

@@ -19,12 +19,25 @@
         position: relative;
         -webkit-font-smoothing: antialiased;
     }
+
     /*login ------------------------*/
     
     .loginForm {
         /* position: absolute; */
         width: 400px;
         height: 450px;
+        padding: 30px 20px;
+        background-color: #FFFFFF;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+        border-radius: 15px;
+        border: 2px solid;
+        margin: 30px 0 35px 0;
+    }
+    .writeForm {
+        /* position: absolute; */
         padding: 30px 20px;
         background-color: #FFFFFF;
         text-align: center;
@@ -2913,6 +2926,13 @@ that IE7/8 do not support :nth-child.
         margin: 0 0 22px 0;
         padding: 20px;
     }
+
+    .panel_write {
+        height: 500px;
+        background: #f9f9f9;
+        margin: 0 0 22px 0;
+        padding: 20px;
+    }
     
     .panel> :first-child {
         margin-top: 0
@@ -3476,7 +3496,7 @@ that IE7/8 do not support :nth-child.
         background-color: #55a2a6;
         font-weight: bold;
         text-align: center;
-        width: 18%;
+        width: 20%;
         font-size: larger;
         display: table-cell;
         vertical-align: middle;

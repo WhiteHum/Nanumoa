@@ -68,9 +68,9 @@ public class UserController {
         return "/farmer_education";
     }
 
-    @GetMapping("/migrant1")
-    public String migrant1() {
-        return "/migrant1";
+    @GetMapping("/migrant")
+    public String migrant() {
+        return "/migrant";
     }
     @GetMapping("/migrant2")
     public String migrant2() {

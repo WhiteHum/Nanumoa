@@ -67,7 +67,7 @@
                 <li>
                     <a href="#">이주노동자</a>
                     <ul>
-                        <li><a th:href="@{/migrant1}">일하기</a></li>
+                        <li><a th:href="@{/migrant}">일하기</a></li>
                         <li><a th:href="@{/migrant2}">이주 여성 지원</a></li>
                         <li><a th:href="@{/migrant3}">이주민 농업 기초 교육</a></li>
 
@@ -134,6 +134,9 @@
         </div>
         <input type="radio" name="auth" value="ROLE_ADMIN,ROLE_USER"> admin
         <input type="radio" name="auth" value="ROLE_USER" checked="checked"> user <br>
+
+<!--        <input type="radio" name="auth" value="ROLE_FARMER"> 농장주-->
+<!--        <input type="radio" name="auth" value="ROLE_MIGRANT" checked="checked"> 이주민 <br>-->
         <br>
         <button type="submit" class="btn lnsert1">회원가입</button>
     </form>

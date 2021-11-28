@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,9 +20,9 @@ import java.util.Set;
 public class UserInfo implements UserDetails {
 
     @Id
-    @Column(name = "code")
+    @Column(name = "id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long code;
+    private Long id;
 
     @Column(name = "email", unique = true)
     private String email;
@@ -38,6 +39,7 @@ public class UserInfo implements UserDetails {
         this.password = password;
         this.auth = auth;
     }
+
 
     // 사용자의 권한을 콜렉션 형태로 반환
     // 단, 클래스 자료형은 GrantedAuthority를 구현해야함

@@ -18,22 +18,7 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     // 글 작성 처리
-    public void write(Board board, MultipartFile file) throws Exception{
-
-        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-
-        //랜덤 아이디
-        UUID uuid = UUID.randomUUID();
-
-        String fileName = uuid + "_" + file.getOriginalFilename();
-
-        //파일을 생성해 줄 껍데기
-        File saveFile = new File(projectPath, fileName);
-
-        file.transferTo(saveFile);
-
-        board.setFilename(fileName);
-        board.setFilepath("/files/" + fileName);
+    public void write(Board board) throws Exception{
 
         boardRepository.save(board);
     }
@@ -50,7 +35,7 @@ public class BoardService {
     }
 
     // 특정 게시글 불러오기
-    public Board boardView(Integer id) {
+    public Board boardView(Long id) {
 
         return boardRepository.findById(id).get();
     }

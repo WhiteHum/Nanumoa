@@ -67,7 +67,7 @@
                 <li>
                     <a href="#">이주노동자</a>
                     <ul>
-                        <li><a th:href="@{/migrant1}">일하기</a></li>
+                        <li><a th:href="@{/migrant}">일하기</a></li>
                         <li><a th:href="@{/migrant2}">이주 여성 지원</a></li>
                         <li><a th:href="@{/migrant3}">이주민 농업 기초 교육</a></li>
 
@@ -129,10 +129,10 @@
         <div class="eight columns">
             <!-- Our History-->
             <div class="sectiontitle">
-                <h4>모드니 모드니(Modney Modney)</h4>
+                <h4>나누모아(Nanumoa)</h4>
             </div>
             <p>
-                모드니(Modney)란 순수한 우리말로 '모든 것을 가진 사람'이라는 뜻입니다. <br/><br/>사람을 구인하는 곳과 사람을 고용해 주기를 원하는 두 목표를 아울러서 보다 바람직한 고용시장을 활성화 시키고자 모드니 모드니(Modney Modney)라는 뜻을 가지게 되었습니다. 원하는 곳의 건강한 고용 시장 활성화와 지속적인 농가 인력 공급을 위해 외국인 근로자와 이주민 여성을 대상으로 일자리 연계 서비스를 제공하고
+               사람을 구인하는 곳과 사람을 고용해 주기를 원하는 두 목표를 아울러서 보다 바람직한 고용시장을 활성화 시키고자 나누모아(Nanumoa)라는 뜻을 가지게 되었습니다. 원하는 곳의 건강한 고용 시장 활성화와 지속적인 농가 인력 공급을 위해 외국인 근로자와 이주민 여성을 대상으로 일자리 연계 서비스를 제공하고
                 있습니다.
             </p>
             <div class="panel">
@@ -144,12 +144,12 @@
                 </p>
             </div>
             <p>
-                농가 인구 감소로 인한 농업 인력 확보의 어려움, 농업 노동 임금의 지속적인 증가는 농장주에게 이중 고통을 주고 있습니다. 현재는 외국인 근로자를 통해서 인력난을 해소하고 있지만, 여전히 수요보다 공급이 현저하게 부족합니다. 따라서 저희 모드니로는 외국인 노동자의 상시고용 수요를 확보하는 발판을 마련하고자 목표를 세우고 노력하고 있습니다.
+                농가 인구 감소로 인한 농업 인력 확보의 어려움, 농업 노동 임금의 지속적인 증가는 농장주에게 이중 고통을 주고 있습니다. 현재는 외국인 근로자를 통해서 인력난을 해소하고 있지만, 여전히 수요보다 공급이 현저하게 부족합니다. 따라서 저희 나누모아로는 외국인 노동자의 상시고용 수요를 확보하는 발판을 마련하고자 목표를 세우고 노력하고 있습니다.
             </p>
             <br/>
             <!-- Accordion-->
             <dl class="tabs">
-                <dd class="active"><a href="#simple1">모드니 모든이로</a></dd>
+                <dd class="active"><a href="#simple1">나누모아</a></dd>
                 <dd><a href="#simple2">우리가 하는 일</a></dd>
                 <dd><a href="#simple3">이주민 지원 프로그램</a></dd>
                 <dd><a href="#simple4">지원하는 영역</a></dd>
@@ -189,7 +189,7 @@
         <!-- SIDEBAR-->
         <div class="four columns">
             <div class="teamwrap teambox">
-                <img src="../static/images/ds1.jpg" alt="">
+                <img th:src="@{/images/ds1.jpg}" alt="">
                 <div class="mask">
                     <h2>이다선</h2>
                     <p>
@@ -212,7 +212,7 @@
                 </div>
             </div>
             <div class="teamwrap teambox">
-                <img src="../static/images/te1.jpg" alt="">
+                <img th:src="@{/images/te1.jpg}" alt="">
                 <div class="mask">
                     <h2>김태은</h2>
                     <p>
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="teamwrap teambox">
-                <img src="../static/images/hj1.jpg" alt="">
+                <img th:src="@{/images/hj1.jpg}" alt="">
                 <div class="mask">
                     <h2>오현주</h2>
                     <p>
@@ -310,18 +310,20 @@
     <!-- JAVASCRIPTS
 ================================================== -->
     <!-- Javascript files placed here for faster loading -->
-    <script src="../static/javascripts/foundation.min.js"></script>
-    <script src="../static/javascripts/jquery.easing.1.3.js"></script>
-    <script src="../static/javascripts/elasticslideshow.js"></script>
-    <script src="../static/javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
-    <script src="../static/javascripts/jquery.cycle.js"></script>
-    <script src="../static/javascripts/app.js"></script>
-    <script src="../static/javascripts/modernizr.foundation.js"></script>
-    <script src="../static/javascripts/slidepanel.js"></script>
-    <script src="../static/javascripts/scrolltotop.js"></script>
-    <script src="../static/javascripts/hoverIntent.js"></script>
-    <script src="../static/javascripts/superfish.js"></script>
-    <script src="../static/javascripts/responsivemenu.js"></script>
+
+
+<script th:src="@{/javascripts/foundation.min.js}"></script>
+<script th:src="@{/javascripts/jquery.easing.1.3.js}"></script>
+<script th:src="@{/javascripts/elasticslideshow.js}"></script>
+<script th:src="@{/javascripts/jquery.carouFredSel-6.0.5-packed.js}"></script>
+<script th:src="@{/javascripts/jquery.cycle.js}"></script>
+<script th:src="@{/javascripts/app.js}"></script>
+<script th:src="@{/javascripts/modernizr.foundation.js}"></script>
+<script th:src="@{/javascripts/slidepanel.js}"></script>
+<script th:src="@{/javascripts/scrolltotop.js}"></script>
+<script th:src="@{/javascripts/hoverIntent.js}"></script>
+<script th:src="@{/javascripts/superfish.js}"></script>
+<script th:src="@{/javascripts/responsivemenu.js}"></script>
 </body>
 
 </html>
