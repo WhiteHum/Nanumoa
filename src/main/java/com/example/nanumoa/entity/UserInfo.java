@@ -18,7 +18,6 @@ import java.util.Set;
 @Entity
 @Getter
 public class UserInfo implements UserDetails {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
