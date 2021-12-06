@@ -23,10 +23,7 @@ public class Board {
     @JoinColumn( name = "user_info_id", referencedColumnName = "id")
     private UserInfo userInfo;
 
-
-//
 //    private String filename;
-//
 //    private String filepath;
 
 }
