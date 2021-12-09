@@ -84,9 +84,6 @@
                 <li>
                     <a th:href="@{/help}">고객문의</a>
                 </li>
-                <!--                    <li>-->
-                <!--                        <span sec:authentication="name"></span>님 환영합니다.-->
-                <!--                    </li>-->
                 <li sec:authorize="isAnonymous()">
                     <a th:href="@{/login}">
                         <button class="login button">로그인</button>
